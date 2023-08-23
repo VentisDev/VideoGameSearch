@@ -1,28 +1,27 @@
-import {
-  ChakraProvider,
-  Button,
-  CircularProgress,
-  CircularProgressLabel,
-} from "@chakra-ui/react";
-import { useState } from "react";
+import { Grid, ChakraProvider, GridItem, Show } from "@chakra-ui/react";
 
 function App() {
-  const [isLoading, setLoading] = useState(false);
-
   return (
     <ChakraProvider>
-      <Button onClick={() => setLoading(!isLoading)}>Click for Loader</Button>
-      <CircularProgress
-        isIndeterminate
-        color="green.300"
-        value={80}
-        size="60"
-        thickness="8px"
+      <Grid
+        templateAreas={{
+          base: ` "nav" "main" `,
+          lg: ` "nav nav" "aside main" `,
+        }}
       >
-        <CircularProgressLabel fontSize="30px" color="orange.600">
-          Loading...
-        </CircularProgressLabel>
-      </CircularProgress>
+        <GridItem area="nav" bg="coral">
+          Nav
+        </GridItem>
+        <Show above="lg">
+          {" "}
+          <GridItem area="aside" bg="gray">
+            Aside
+          </GridItem>
+        </Show>
+        <GridItem area="main" bg="pink">
+          Main
+        </GridItem>
+      </Grid>
     </ChakraProvider>
   );
 }
