@@ -6,7 +6,7 @@ const ColorModeSwitch = () => {
   return (
     <HStack>
         <Switch colorScheme="green" isChecked={colorMode === "dark"} onChange={toggleColorMode}/>
-        <Text>Flip Color Mode</Text>
+        <Text>Color Mode</Text>
     </HStack>
   )
 }
