@@ -16,7 +16,7 @@ const GameSearch = ({ onSearch }: Props) => {
         if (ref.current) onSearch(ref.current.value)
       }}
     >
-      <InputGroup>
+      <InputGroup width="100%">
         <InputLeftElement children={<BsSearch />} />
         <Input
           ref={ref}
@@ -24,7 +24,6 @@ const GameSearch = ({ onSearch }: Props) => {
           variant="field"
           borderRadius={20}
           paddingY={3}
-          width="100%"
         ></Input>
       </InputGroup>
     </form>
