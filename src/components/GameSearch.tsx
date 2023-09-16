@@ -24,6 +24,7 @@ const GameSearch = ({ onSearch }: Props) => {
           variant="field"
           borderRadius={20}
           paddingY={3}
+          width="100%"
         ></Input>
       </InputGroup>
     </form>
